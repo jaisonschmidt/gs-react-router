@@ -243,6 +243,51 @@ Crie uma página para rotas não encontradas:
 
 ---
 
+## 🎨 Storybook — Visualizando os Componentes
+
+### O que é o Storybook?
+
+O **Storybook** é uma ferramenta de desenvolvimento que permite visualizar, testar e documentar componentes de UI de forma **isolada**, sem precisar rodar a aplicação inteira. Cada componente é exibido em um ambiente independente chamado **story**, onde você pode:
+
+- Ver como o componente renderiza com diferentes props
+- Interagir com o componente (clicar botões, alterar valores)
+- Testar variações de estado (ex: botão primário vs secundário)
+- Entender quais props cada componente aceita
+
+### Como rodar o Storybook
+
+```bash
+npm run storybook
+```
+
+Acesse `http://localhost:6006` no navegador. Você verá um painel lateral com todos os componentes disponíveis:
+
+| Componente | O que você vai ver |
+|---|---|
+| **Button** | Botão com variantes `primary` e `secondary` |
+| **Header** | Cabeçalho do blog com título customizável |
+| **Footer** | Rodapé com texto configurável |
+| **PostItem** | Card individual de um post com título, resumo, autor e data |
+| **PostList** | Lista completa de posts renderizados em cards |
+
+### Como funciona?
+
+Cada componente possui um arquivo `.stories.jsx` na pasta `src/components/`. Esse arquivo define as **stories** (variações) do componente. Por exemplo:
+
+```jsx
+// Button.stories.jsx
+export const Primary = {
+  args: {
+    children: "Clique aqui",
+    variant: "primary",
+  },
+};
+```
+
+> 💡 **Dica:** Use o painel **Controls** no Storybook para alterar as props em tempo real e ver como o componente se comporta!
+
+---
+
 ## 📚 Recursos Adicionais
 
 - [Documentação oficial do React Router](https://reactrouter.com/)
